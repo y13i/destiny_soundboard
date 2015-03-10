@@ -1,83 +1,97 @@
-<!DOCTYPE HTML>
+﻿<!DOCTYPE HTML>
 <html lang="en">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<meta name="robots" content="noindex">
-	<title>Destiny Soundboard Reloaded</title>
-	<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.7.0/build/reset-fonts-grids/reset-fonts-grids.css">
-	<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.7.0/build/base/base-min.css"> 
-	<style type="text/css" media="screen">
-		button {
-			-moz-border-radius: 5px;
-			background: red;
-			border: 3px solid black;
-			display: inline-block;
-			cursor: pointer;
-			padding: 3px 5px;
-			margin: 5px;
-		}
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="robots" content="noindex">
+    <title>Destiny Soundboard Reloaded</title>
+    <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.7.0/build/reset-fonts-grids/reset-fonts-grids.css">
+    <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.7.0/build/base/base-min.css"> 
+    <style type="text/css" media="screen">
+        button {
+            -moz-border-radius: 5px;
+            background: red;
+            border: 3px solid black;
+            display: inline-block;
+            cursor: pointer;
+            padding: 3px 5px;
+            margin: 5px;
+        }
 
-		html {
-			background: url(destiny-goes-to-work.jpg);
-			background-repeat: no-repeat;
-			background-attachment: fixed;
-			background-position: center top;
-			background-color: black;
-		}
+        html {
+            background: url(destiny-goes-to-work.jpg);
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center top;
+            background-color: black;
+        }
 
-		h1 {
-			color: white;
-			font-size: 3em;
-			-webkit-text-stroke: 1px black;
-			text-shadow: 1px 1px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-		}
-	</style>
+        h1 {
+            color: white;
+            font-size: 3em;
+            -webkit-text-stroke: 1px black;
+            text-shadow: 1px 1px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+        }
+    </style>
 </head>
 <body>
     <div id="doc">
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
         <script type="text/javascript" charset="utf-8">
             $(function() {
-                $("audio").removeAttr("controls").each(function(i, audioElement) {
+                $('audio').removeAttr('controls').each(function(i, audioElement) {
                     var audio = $(this);
-                    var that = this; //closure to keep reference to current audio tag
+                    var that = this;
                     $("#doc").append($('<button>'+audio.attr("title")+'</button>').click(function() {
                         that.play();
                     }));
                 });
             });
+
+            $(function() {
+                $('#stop_all_button').bind('click', function() {
+                    $('audio').each(function(i, audioElement) {
+                        audioElement.pause();
+                        audioElement.currentTime = 0;
+                    });
+                });
+            });
         </script>
 
-		<center><h1>Destiny Soundboard Reloaded v0.1</h1></center>
-		<audio src="clips/allahu_akbar.ogg" controls autobuffer="true" title="Allahu Akbar I"></audio>
-		<audio src="clips/allahu_akbar_2.ogg" controls autobuffer="true" title="Allahu Akbar II"></audio>
-		<audio src="clips/allahu_akbar_3.ogg" controls autobuffer="true" title="Allahu Akbar III"></audio>
-		<audio src="clips/mlady.ogg" controls autobuffer="true" title="M'LADY I"></audio>
-		<audio src="clips/mlady_2.ogg" controls autobuffer="true" title="M'LADY II"></audio>
-		<audio src="clips/tip.ogg" controls autobuffer="true" title="TIP TIP TIP TIP"></audio>		
-		<audio src="clips/lose_yourself.ogg" controls autobuffer="true" title="Spaghetti"></audio>
-		<audio src="clips/booty.ogg" controls autobuffer="true" title="Booty"></audio>
-		<audio src="clips/booty2.ogg" controls autobuffer="true" title="Booty II"></audio>
-		<audio src="clips/who_does_that.ogg" controls autobuffer="true" title="WHO DOES THAT"></audio>
-		<audio src="clips/ayy_lmao.ogg" controls autobuffer="true" title="AYYLMAO"></audio>
-		<audio src="clips/desperation.ogg" controls autobuffer="true" title="Desperation"></audio>
-		<audio src="clips/nooo.ogg" controls autobuffer="true" title="NOOOOOO"></audio>
-		<audio src="clips/rape.ogg" controls autobuffer="true" title="SJW"></audio> <!-- RightToBearArmsLOL -->
-		<audio src="clips/durr.ogg" controls autobuffer="true" title="DURRR"></audio>
-		<audio src="clips/momo.ogg" controls autobuffer="true" title="MoMo"></audio> <!-- TheBullshitPatrol -->
-		<audio src="clips/retard_magnet.ogg" controls autobuffer="true" title="Retard Magnet"></audio>
-		<audio src="clips/nuke_it.ogg" controls autobuffer="true" title="Nuke It"></audio>
-		<audio src="clips/chill.ogg" controls autobuffer="true" title="We Chill"></audio>
-		<audio src="clips/zvx_strategy.ogg" controls autobuffer="true" title="ZvX Strategy"></audio>
-		<audio src="clips/jimmy_nooo.ogg" controls autobuffer="true" title="Jimmy Nooo"></audio>
-		<audio src="clips/engine_breaking.ogg" controls autobuffer="true" title="Engine Breaking"></audio>
-		<audio src="clips/sub_train.ogg" controls autobuffer="true" title="Choo Choo"></audio>
-		<audio src="clips/biggest_larva.ogg" controls autobuffer="true" title="Biggest Larva"></audio>
-		<audio src="clips/ech.ogg" controls autobuffer="true" title="ECH"></audio>
-		<audio src="clips/british_dating_advice.ogg" controls autobuffer="true" title="Britbonger's Dating Advice"></audio>
-		<audio src="clips/grill_gaming.ogg" controls autobuffer="true" title="Grill Gaming"></audio>
-		<audio src="clips/accounting_with_destiny.ogg" controls autobuffer="true" title="Accounting"></audio>
-		<audio src="clips/bot_lane.ogg" controls autobuffer="true" title="Bot Lane Creed"></audio>
+        <center><h1>Destiny Soundboard Reloaded v0.2</h1></center>
+        <center><button id="stop_all_button">Stop all sounds</button></center>
+        <br/><br />
+        <audio src="clips/allahu_akbar.ogg" controls autobuffer="true" title="Allahu Akbar I"></audio>
+        <audio src="clips/allahu_akbar_2.ogg" controls autobuffer="true" title="Allahu Akbar II"></audio>
+        <audio src="clips/allahu_akbar_3.ogg" controls autobuffer="true" title="Allahu Akbar III"></audio>
+        <audio src="clips/mlady.ogg" controls autobuffer="true" title="M'LADY I"></audio>
+        <audio src="clips/mlady_2.ogg" controls autobuffer="true" title="M'LADY II"></audio>
+        <audio src="clips/mlady_3.ogg" controls autobuffer="true" title="M'LADY III"></audio>
+        <audio src="clips/tip.ogg" controls autobuffer="true" title="TIP TIP TIP TIP"></audio>		
+        <audio src="clips/lose_yourself.ogg" controls autobuffer="true" title="Spaghetti"></audio>
+        <audio src="clips/booty.ogg" controls autobuffer="true" title="Booty"></audio>
+        <audio src="clips/booty2.ogg" controls autobuffer="true" title="Booty II"></audio>
+        <audio src="clips/who_does_that.ogg" controls autobuffer="true" title="WHO DOES THAT"></audio>
+        <audio src="clips/ayy_lmao.ogg" controls autobuffer="true" title="AYYLMAO"></audio>
+        <audio src="clips/desperation.ogg" controls autobuffer="true" title="Desperation"></audio>
+        <audio src="clips/nooo.ogg" controls autobuffer="true" title="NOOOOOO"></audio>
+        <audio src="clips/rape.ogg" controls autobuffer="true" title="SJW"></audio> <!-- RightToBearArmsLOL -->
+        <audio src="clips/durr.ogg" controls autobuffer="true" title="DURRR"></audio>
+        <audio src="clips/momo.ogg" controls autobuffer="true" title="MoMo"></audio> <!-- TheBullshitPatrol -->
+        <audio src="clips/retard_magnet.ogg" controls autobuffer="true" title="Retard Magnet"></audio>
+        <audio src="clips/nuke_it.ogg" controls autobuffer="true" title="Nuke It"></audio>
+        <audio src="clips/chill.ogg" controls autobuffer="true" title="We Chill"></audio>
+        <audio src="clips/zvx_strategy.ogg" controls autobuffer="true" title="ZvX Strategy"></audio>
+        <audio src="clips/jimmy_nooo.ogg" controls autobuffer="true" title="Jimmy Nooo"></audio>
+        <audio src="clips/engine_breaking.ogg" controls autobuffer="true" title="Engine Breaking"></audio>
+        <audio src="clips/sub_train.ogg" controls autobuffer="true" title="Choo Choo"></audio>
+        <audio src="clips/biggest_larva.ogg" controls autobuffer="true" title="Biggest Larva"></audio>
+        <audio src="clips/ech.ogg" controls autobuffer="true" title="ECH"></audio>
+        <audio src="clips/british_dating_advice.ogg" controls autobuffer="true" title="Britbonger's Dating Advice"></audio>
+        <audio src="clips/grill_gaming.ogg" controls autobuffer="true" title="Grill Gaming"></audio>
+        <audio src="clips/accounting_with_destiny.ogg" controls autobuffer="true" title="Accounting"></audio>
+        <audio src="clips/bot_lane.ogg" controls autobuffer="true" title="Bot Lane Creed"></audio>
+        <audio src="clips/teamwork.ogg" controls autobuffer="true" title="Teamwork"></audio>
+        <audio src="clips/farm_center.ogg" controls autobuffer="true" title="Farm Center 24/7"></audio>
     </div>
 </body>
 </html>
