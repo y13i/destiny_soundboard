@@ -47,6 +47,10 @@
                     var audio = $(this);
                     var that = this;
                     $("#doc").append($('<button>'+audio.attr("title")+'</button>').click(function() {
+                        $('audio').each(function(i, audioElement) {
+                            audioElement.pause();
+                            audioElement.currentTime = 0;
+                        });
                         that.play();
                     }));
                 });
@@ -62,7 +66,7 @@
             });
         </script>
 
-        <center><h1>Destiny Soundboard Reloaded v0.6</h1></center>
+        <center><h1>Destiny Soundboard Reloaded v0.6.1</h1></center>
         <center><button id="stop_all_button">Stop all sounds</button></center>
         <br/><br />
         <audio src="clips/allahu_akbar.ogg" controls autobuffer="true" title="Allahu Akbar I"></audio>
